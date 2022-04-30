@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'description_place.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final descriptionDummy = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
+
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
@@ -24,7 +27,24 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // Es la parte funcional de la aplicacion, la composicion de la aplicacion
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Hola mundo"),
+
+          ),
+          body: DescriptionPlace("Miami", 4, descriptionDummy),
+        )
+      /*home: Scaffold(
+        appBar: AppBar(
+          title: Text("Hola mundo"),
+
+        ),
+        body: Center(
+          child: Text("Hola mundo feliz"),
+        ),
+      )*/
+      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
